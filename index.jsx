@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 
+
 import './css/index.scss';
 
 const Page = (props) => {
@@ -34,9 +35,9 @@ const Technology = (props) => {
 function App() {
   return (
     <div>
-        <Page>
+        <Page className="first">
             <div>
-                <img src="/assets/me.png" />
+                <img src="../assets/me.jpg" className="me" />
                 <h1>
                     Fred McDonnell
                 </h1>
