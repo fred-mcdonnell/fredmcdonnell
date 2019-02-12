@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import classnames from 'classnames';
 
 
@@ -7,7 +8,7 @@ import './css/index.scss';
 
 const Page = (props) => {
     return (
-        <div className={classnames("page", props.className)}>
+        <div id={props.id} className={classnames("page", props.className)}>
             {props.children}
         </div>
     );
@@ -30,42 +31,98 @@ const Technology = (props) => {
             <div>{props.children}</div>
         </div>
     );
+} 
+
+const Navigation = (props) => {
+    return (
+        <div id="navigation">
+            <Link to="home" smooth={true} duration={500}>Home</Link>
+            <Link to="about" smooth={true} duration={500}>About Me</Link>
+            <Link to="tech" smooth={true} duration={500}>Technologies</Link>
+            <Link to="contact" smooth={true} duration={500}>Contact</Link>
+        </div>
+    );
 }
 
-function App() {
-  return (
-    <div>
-        <Page className="first">
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentPage: ""
+        }
+    }
+
+    render() {
+        return (
             <div>
-                <img src="../assets/me.jpg" className="me" />
-                <h1>
-                    Fred McDonnell
-                </h1>
-                <h2>
-                    Developer | Technical Consultant
-                </h2>
+                    <Navigation />
+                    <Page id="home" className="first">
+                        <div>
+                            <img src="../assets/me.jpg" className="me" />
+                            <h1>
+                                Fred McDonnell
+                            </h1>
+                            <h2>
+                                Developer | Technical Consultant
+                            </h2>
+                        </div>
+                    </Page>
+                    <Page id="about">
+                        <div>
+                            <h3>
+                                About Me
+                            </h3>
+                            <div>
+                                <p>I currently work at QuantSpark as a Senior Analyst, leading on the development of one of our flagship products. I really enjoy my role, working closely with clients, as well as in the development team itself. I am responsible for architecting the solutions to our clients' problems, and delivering these solutions using Agile methodologies. I'm very fortunate to have an incredibly varied role, where the projects I work on may range from creating machine-learning driven models, developing and designing new product features, or drafting system data architectures.</p>
+                            </div>
+                            <div>
+                                <Technology imgRef="react">React.js</Technology>
+                                <Technology imgRef="webpack">Webpack</Technology>
+                                <Technology imgRef="python">Python</Technology>
+                                <Technology imgRef="php">PHP</Technology>
+                                <Technology imgRef="mysql">MySQL</Technology>
+                                <Technology imgRef="aws">AWS</Technology>
+                            </div>
+                        </div>
+                    </Page>
+                    <Page id="tech">
+                        <div>
+                            <h3>
+                                Technologies
+                            </h3>
+                            <div>
+                                Below are some of the technologies I have used across projects in the last few years. 
+                            </div>
+                            <div>
+                                <Technology imgRef="react">React.js</Technology>
+                                <Technology imgRef="webpack">Webpack</Technology>
+                                <Technology imgRef="python">Python</Technology>
+                                <Technology imgRef="php">PHP</Technology>
+                                <Technology imgRef="mysql">MySQL</Technology>
+                                <Technology imgRef="aws">AWS</Technology>
+                            </div>
+                        </div>
+                    </Page>
+                    <Page id="contact">
+                        <div>
+                            <h3>
+                                Contact
+                            </h3>
+                            <div>
+                                Please feel free to get in touch, you can contact me using one of the following:
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>GitHub</li>
+                                    <li>LinkedIn</li>
+                                    <li>Email</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Page>
             </div>
-        </Page>
-        <Page>
-            <div>
-                <h3>
-                    Technologies
-                </h3>
-                <div>
-                    Below are some of the technologies I have used across projects in the last few years. 
-                </div>
-                <div>
-                    <Technology imgRef="react">React.js</Technology>
-                    <Technology imgRef="webpack">Webpack</Technology>
-                    <Technology imgRef="python">Python</Technology>
-                    <Technology imgRef="php">PHP</Technology>
-                    <Technology imgRef="mysql">MySQL</Technology>
-                    <Technology imgRef="aws">AWS</Technology>
-                </div>
-            </div>
-        </Page>
-    </div>
-  );
+        );
+    }
 }
 
 ReactDOM.render(<App />, document.querySelector('#app'));
