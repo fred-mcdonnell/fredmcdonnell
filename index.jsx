@@ -34,16 +34,28 @@ const Technology = (props) => {
 } 
 
 const Navigation = (props) => {
-    let animationProps = {
-        "smooth" : true,
-        "duration" : 500
+    let linkProps = {
+        smooth : true,
+        duration : 500,
+        style: {
+            display: "block",
+            float: "left"
+        }
     }
     return (
         <div id="navigation">
-            <Link to="home" {...animationProps}>Home</Link>
-            <Link to="about" {...animationProps}>About Me</Link>
-            <Link to="tech" {...animationProps}>Technologies</Link>
-            <Link to="contact" {...animationProps}>Contact</Link>
+            <Link to="home" {...linkProps}>
+                <div className="link">Home</div>
+            </Link>
+            <Link to="about" {...linkProps}>
+                <div className="link">About Me</div>
+            </Link>
+            <Link to="tech" {...linkProps}>
+                <div className="link">Technologies</div>
+            </Link>
+            <Link to="contact" {...linkProps}>
+                <div className="link">Contact</div>
+            </Link>
         </div>
     );
 }
