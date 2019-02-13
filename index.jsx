@@ -34,12 +34,16 @@ const Technology = (props) => {
 } 
 
 const Navigation = (props) => {
+    let animationProps = {
+        "smooth" : true,
+        "duration" : 500
+    }
     return (
         <div id="navigation">
-            <Link to="home" smooth={true} duration={500}>Home</Link>
-            <Link to="about" smooth={true} duration={500}>About Me</Link>
-            <Link to="tech" smooth={true} duration={500}>Technologies</Link>
-            <Link to="contact" smooth={true} duration={500}>Contact</Link>
+            <Link to="home" {...animationProps}>Home</Link>
+            <Link to="about" {...animationProps}>About Me</Link>
+            <Link to="tech" {...animationProps}>Technologies</Link>
+            <Link to="contact" {...animationProps}>Contact</Link>
         </div>
     );
 }
@@ -56,7 +60,7 @@ class App extends React.Component {
         return (
             <div>
                     <Navigation />
-                    <Page id="home" className="first">
+                    <Page id="home">
                         <div>
                             <img src="../assets/me.jpg" className="me" />
                             <h1>

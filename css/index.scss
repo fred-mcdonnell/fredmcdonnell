@@ -20,12 +20,12 @@ html, body, #app, #app > div {
     height: 140px;
     border-radius: 70px;
 }
-.first.page > div {
+#home.page > div {
     padding: 30px;
     position: absolute;
     bottom: 0;
 }
-.first.page h2 {
+#home.page h2 {
     font-weight: 100;
     font-size: 22px;
 }
