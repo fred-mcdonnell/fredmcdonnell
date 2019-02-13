@@ -32,6 +32,7 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
