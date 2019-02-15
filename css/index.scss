@@ -11,8 +11,9 @@ html, body, #app, #app > div {
 .page {
     background-color: #222;
     color: white;
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    height: calc(100% - 170px);
+    padding: 120px 50px 50px 50px;
     font-family: 'Work Sans';
 }
 .me {
@@ -20,8 +21,11 @@ html, body, #app, #app > div {
     height: 140px;
     border-radius: 70px;
 }
+h3 {
+    font-size: 30px;
+}
 #home.page > div {
-    padding: 30px;
+    padding-bottom: 40px;
     position: absolute;
     bottom: 0;
 }
@@ -29,11 +33,27 @@ html, body, #app, #app > div {
     font-weight: 100;
     font-size: 22px;
 }
+#about.page {
+    background-color: #343f4a;
+}
+#about.page > div {
+    max-width: 900px;
+}
+#about.page p {
+    line-height: 1.7
+}
+#tech.page {
+    background-color: #3c383a;
+}
 #navigation {
     background-color: #2b2b2b;
-    height: 82px;
+    height: 92px;
     width: 100%;
     padding-left: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 .link {
     display: block;
@@ -45,4 +65,18 @@ html, body, #app, #app > div {
     margin: 20px;
     font-size: 16px;
     cursor: pointer;
+}
+.link:hover {
+    border-bottom: 2px white solid;
+}
+.technology {
+    padding: 20px;
+    float: left;
+    margin: 20px;
+    background-color: rgba(255,255,255,0.05);
+}
+.technology > div {
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
 }

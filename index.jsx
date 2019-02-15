@@ -15,19 +15,19 @@ const Page = (props) => {
 }
 
 const assetMap = {
-    "react" : "/img/react.js",
-    "php" : "/img/react.js",
-    "mysql" : "/img/react.js",
-    "aws" : "/img/react.js",
-    "webpack" : "/img/react.js",
-    "python" : "/img/react.js"
+    "react" : "../assets/originals/react.png",
+    "php" : "../assets/originals/react.png",
+    "mysql" : "../assets/originals/react.png",
+    "aws" : "../assets/originals/react.png",
+    "webpack" : "../assets/originals/react.png",
+    "python" : "../assets/originals/react.png"
 }
 
 const Technology = (props) => {
 
     return (
         <div className={"technology"}>
-            <img src={assetMap[props.imgRef]} />
+            <img src={assetMap[props.imgRef]} style={{width:100,height:80}} />
             <div>{props.children}</div>
         </div>
     );
@@ -90,14 +90,6 @@ class App extends React.Component {
                             </h3>
                             <div>
                                 <p>I currently work at QuantSpark as a Senior Analyst, leading on the development of one of our flagship products. I really enjoy my role, working closely with clients, as well as in the development team itself. I am responsible for architecting the solutions to our clients' problems, and delivering these solutions using Agile methodologies. I'm very fortunate to have an incredibly varied role, where the projects I work on may range from creating machine-learning driven models, developing and designing new product features, or drafting system data architectures.</p>
-                            </div>
-                            <div>
-                                <Technology imgRef="react">React.js</Technology>
-                                <Technology imgRef="webpack">Webpack</Technology>
-                                <Technology imgRef="python">Python</Technology>
-                                <Technology imgRef="php">PHP</Technology>
-                                <Technology imgRef="mysql">MySQL</Technology>
-                                <Technology imgRef="aws">AWS</Technology>
                             </div>
                         </div>
                     </Page>
