@@ -18,18 +18,13 @@ const Page = (props) => {
 
 const Technology = (props) => {
 
-    const imgStyles = {
-        display: "block",
-        maxWidth: 100,
-        maxHeight: 80,
-        width: "auto",
-        height: "auto"
-    }
 
     return (
         <a className={"technology"} href={props.href}>
-            <img src={props.img} style={imgStyles} />
-            <div>{props.children}</div>
+            <div className="image">
+                <img src={props.img} />
+            </div>
+            <div className="descriptor">{props.children}</div>
         </a>
     );
 } 
@@ -97,7 +92,7 @@ class App extends React.Component {
             },
             {
                 "name": "Nginx",
-                "img": "../assets/originals/nginx.svg",
+                "img": "../assets/originals/nginx.png",
                 "url": "https://www.nginx.com/"
             },
             {
@@ -168,7 +163,7 @@ class App extends React.Component {
                             <div>
                                 {this.techMap.map(i => {
                                     return (
-                                        <Technology href={i.href} img={i.img}>{i.name}</Technology>
+                                        <Technology href={i.url} img={i.img}>{i.name}</Technology>
                                     )
                                 })}
                             </div>

@@ -14,7 +14,7 @@ html, body, #app, #app > div {
     /* width: 100%; */
     height: calc(100% - 170px);
     padding: 120px 50px 50px 50px;
-    font-family: 'Work Sans';
+    font-family: 'Work Sans', sans-serif;
 }
 .me {
     width: 140px;
@@ -77,13 +77,30 @@ h3 {
     float: left;
     margin: 20px;
     background-color: rgba(255,255,255,0.05);
-    
+    text-decoration: none;
 }
 .technology:hover {
     background-color: rgba(255,255,255,0.08);
 }
-.technology > div {
+.technology .descriptor {
     margin-top: 5px;
     text-align: center;
-    font-style: italic;
+    /* font-style: italic; */
+    text-decoration: none;
+    color: white;
+}
+.technology div.image {
+    height: 80px;
+    width: 100px;
+}
+.technology .image img {
+    display: block;
+    max-width: 80px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
