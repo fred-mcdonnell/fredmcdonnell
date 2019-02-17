@@ -44,6 +44,7 @@ h3 {
 }
 #tech.page {
     background-color: #3c383a;
+    background-color: #9a5879;
 }
 #navigation {
     background-color: #2b2b2b;
@@ -70,10 +71,16 @@ h3 {
     border-bottom: 2px white solid;
 }
 .technology {
+    display: block;
+    border: 0;
     padding: 20px;
     float: left;
     margin: 20px;
     background-color: rgba(255,255,255,0.05);
+    
+}
+.technology:hover {
+    background-color: rgba(255,255,255,0.08);
 }
 .technology > div {
     margin-top: 5px;

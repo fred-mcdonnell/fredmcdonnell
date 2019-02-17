@@ -14,22 +14,23 @@ const Page = (props) => {
     );
 }
 
-const assetMap = {
-    "react" : "../assets/originals/react.png",
-    "php" : "../assets/originals/react.png",
-    "mysql" : "../assets/originals/react.png",
-    "aws" : "../assets/originals/react.png",
-    "webpack" : "../assets/originals/react.png",
-    "python" : "../assets/originals/react.png"
-}
+
 
 const Technology = (props) => {
 
+    const imgStyles = {
+        display: "block",
+        maxWidth: 100,
+        maxHeight: 80,
+        width: "auto",
+        height: "auto"
+    }
+
     return (
-        <div className={"technology"}>
-            <img src={assetMap[props.imgRef]} style={{width:100,height:80}} />
+        <a className={"technology"} href={props.href}>
+            <img src={props.img} style={imgStyles} />
             <div>{props.children}</div>
-        </div>
+        </a>
     );
 } 
 
@@ -63,10 +64,73 @@ const Navigation = (props) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.techMap = [
+            {
+                "name": "React.js",
+                "img": "../assets/originals/react.png",
+                "url": "https://reactjs.org/"
+            },
+            {
+                "name": "JS ES6",
+                "img": "../assets/originals/js.jpg",
+                "url": "https://developer.mozilla.org/bm/docs/Web/JavaScript/"
+            },
+            {
+                "name": "HTML5",
+                "img": "../assets/originals/html5.svg",
+                "url": "https://www.w3.org/html/"
+            },
+            {
+                "name": "Sass",
+                "img": "../assets/originals/sass.svg",
+                "url": "https://sass-lang.com/"
+            },
+            {
+                "name": "Webpack",
+                "img": "../assets/originals/webpack.png",
+                "url": "https://webpack.js.org/"
+            },
+            {
+                "name": "AWS",
+                "img": "../assets/originals/aws.svg",
+                "url": "https://aws.amazon.com/"
+            },
+            {
+                "name": "Nginx",
+                "img": "../assets/originals/nginx.svg",
+                "url": "https://www.nginx.com/"
+            },
+            {
+                "name": "MySQL",
+                "img": "../assets/originals/mysql.png",
+                "url": "https://mysql.com/"
+            },
+            {
+                "name": "Python",
+                "img": "../assets/originals/python.svg",
+                "url": "https://python.org/"
+            },
+            {
+                "name": "Flask",
+                "img": "../assets/originals/flask.svg",
+                "url": "http://flask.pocoo.org/"
+            },
+            {
+                "name": "Pandas",
+                "img": "../assets/originals/pandas.png",
+                "url": "https://pandas.pydata.org/"
+            },
+            {
+                "name": "Jira",
+                "img": "../assets/originals/jira.png",
+                "url": "https://www.atlassian.com/software/jira"
+            }
+        ]
         this.state = {
             currentPage: ""
         }
     }
+
 
     render() {
         return (
@@ -102,12 +166,11 @@ class App extends React.Component {
                                 Below are some of the technologies I have used across projects in the last few years. 
                             </div>
                             <div>
-                                <Technology imgRef="react">React.js</Technology>
-                                <Technology imgRef="webpack">Webpack</Technology>
-                                <Technology imgRef="python">Python</Technology>
-                                <Technology imgRef="php">PHP</Technology>
-                                <Technology imgRef="mysql">MySQL</Technology>
-                                <Technology imgRef="aws">AWS</Technology>
+                                {this.techMap.map(i => {
+                                    return (
+                                        <Technology href={i.href} img={i.img}>{i.name}</Technology>
+                                    )
+                                })}
                             </div>
                         </div>
                     </Page>
